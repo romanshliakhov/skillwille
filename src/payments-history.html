@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Payments history"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="profile">
+                <div class="profile__container">
+                    <header class="profile__header profile-header">
+                        <h1 class="profile-header__title title">your Profile</h1>
+                        <div class="profile-header__text text">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                        </div>
+                        <nav class="profile-header__menu menu-profile">
+                            <a href="#" class="menu-profile__link">Profile</a>
+                            <a href="#" class="menu-profile__link">Test results</a>
+                            <a href="#" class="menu-profile__link">Top up balance</a>
+                            <div class="menu-profile__link _active">Payments history</div>
+                            <a href="#" class="menu-profile__link">Activity history</a>
+                        </nav>
+                    </header>
+
+                    <div class="profile__profile-history profile-history">
+                        <div class="profile-history__content">
+                            <div class="profile-history__title title-second">Your congintive test Results! </div>
+                            <div class="profile-history__text text">
+                                <p>Lorem ipsum dolor sit amet consectetur. Vitae mi risus tellus nulla tristique. mi risus tellus. mi risus tellus nulla tristique. </p>
+                            </div>
+                        </div>
+                        <div class="profile-history__table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>date</th>
+                                        <th>type</th>
+                                        <th>amount</th>
+                                        <th>status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>12 Jan 2025</td>
+                                        <td>Balance top up</td>
+                                        <td>+€15</td>
+                                        <td><span class="status">Success</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>12 Jan 2025</td>
+                                        <td>Balance top up</td>
+                                        <td>+€15</td>
+                                        <td><span class="status status_red">Declined</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

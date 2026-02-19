@@ -1,0 +1,105 @@
+// Заголовки, загальні БЕМ блоки та інше...
+
+//========================================================================================================================================================
+
+.title {
+	font-family: var(--font-family);
+	font-weight: 700;
+	@include adaptiveValue("font-size", 22, 24);
+	line-height: 241%;
+	color: #2A2A2A;
+	text-transform: uppercase;
+}
+
+.title-second {
+	font-family: var(--font-family);
+	font-weight: 700;
+	@include adaptiveValue("font-size", 22, 24);
+	line-height: 140%;
+	color: #2A2A2A;
+	text-transform: uppercase;
+}
+
+.text {
+	font-weight: 400;
+	font-size: toRem(16);
+	line-height: 175%;
+	color: #737373;
+}
+
+//========================================================================================================================================================
+
+.label {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	background-color: #F6F3EC;
+	border-radius: toRem(16);
+	padding: toRem(5) toRem(10);
+
+	font-weight: 700;
+	font-size: toRem(12);
+	line-height: 120%;
+	color: #2a2a2a;
+
+	&_purple {
+		background-color: #8E8E8E;
+		color: #FFF;
+	}
+}
+
+//========================================================================================================================================================
+
+.quiz-tag {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	font-family: var(--font-family);
+	font-weight: 700;
+	font-size: toRem(12);
+	line-height: 200%;
+	color: #2a2a2a;
+
+	background-color: #e9eae0;
+	border-radius: toRem(16);
+	padding: toRem(2) toRem(10);
+	min-height: toRem(29);
+
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+
+	&._complete {
+		background-color: #2a2a2a;
+		color: #fafafa;
+	}
+}
+
+//========================================================================================================================================================
+
+.circle-icon {
+	border-radius: 50%;
+	background-color: #f8f9ec;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: toRem(64);
+	aspect-ratio: 1;
+
+	img {
+		object-fit: contain;
+		max-width: toRem(32);
+	}
+
+	&_big {
+		img {
+			max-width: toRem(40);
+		}
+	}
+}
+
+//========================================================================================================================================================

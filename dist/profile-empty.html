@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Profile Empty</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20260203143244">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+			</div>
+		</header>
+		<main class="page">
+
+			<section class="profile">
+				<div class="profile__container">
+					<header class="profile__header profile-header">
+						<h1 class="profile-header__title title">your Profile</h1>
+						<div class="profile-header__text text">
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+						</div>
+						<nav class="profile-header__menu menu-profile">
+							<a href="#" class="menu-profile__link">Profile</a>
+							<a href="#" class="menu-profile__link">Test results</a>
+							<a href="#" class="menu-profile__link">Top up balance</a>
+							<div class="menu-profile__link _active">Payments history</div>
+							<a href="#" class="menu-profile__link">Activity history</a>
+						</nav>
+					</header>
+
+					<div class="profile__empty">
+						<div class="profile__empty-title title-second">You don’t have any payments yet</div>
+						<div class="profile__empty__text text">Just click below to easily top up</div>
+						<a href="#" class="profile__empty-button button button_second">Top up</a>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+		<div id="popup-quiz-start" aria-hidden="true" class="popup popup_quiz">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__header">
+						<div class="popup__title">Cognitive Function <br> Assessment Questionnaire</div>
+
+						<div class="popup__text text">For each statement below, select the option that most accurately reflects your experience. Choose from: "Fully Disagree, " Fully Agree." <br> All questions must be answered to receive your personalized cognitive assessment. </div>
+
+						<div class="popup__buttons">
+							<button data-popup="#popup-quiz" type="button" class="popup__button button"><span>Start test</span></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-quiz" aria-hidden="true" class="popup popup_quiz">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__quiz quiz" data-quiz data-quiz-error="Please select an option!">
+						<div class="quiz__header">
+							<div class="quiz__tags">
+								<div class="quiz__tag quiz-tag">Attention</div>
+								<div class="quiz__tag quiz-tag">Processing Speed</div>
+								<div class="quiz__tag quiz-tag">Memory</div>
+								<div class="quiz__tag quiz-tag">Problem-Solving</div>
+								<div class="quiz__tag quiz-tag">Cognitive Flexibility</div>
+								<div class="quiz__tag quiz-tag">Executive Function</div>
+							</div>
+
+							<div class="quiz__progress progress-quiz">
+								<div class="progress-quiz__line" data-quiz-progress style="--progress-quiz: 0%;"><span></span></div>
+								<div class="progress-quiz__counter">Step <span data-quiz-progress-step style="--progress-quiz-index: '1';"></span>/6</div>
+							</div>
+						</div>
+
+						<div class="quiz__steps">
+							<div class="quiz__step" data-quiz-step>
+								<div class="quiz__title">Processing Speed</div>
+								<div class="quiz__text">I process information more slowly than others around me.</div>
+								<div class="quiz__options options">
+									<div class="options__item">
+										<input id="o_1" class="options__input" type="radio" value="false" name="quiz-step-1">
+										<label for="o_1" class="options__label"><span class="options__text">Fully Disagree</span></label>
+									</div>
+									<div class="options__item">
+										<input id="o_2" class="options__input" type="radio" value="true" name="quiz-step-1">
+										<label for="o_2" class="options__label"><span class="options__text">Fully Agree</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="quiz__step" data-quiz-step>
+								<div class="quiz__title">Memory</div>
+								<div class="quiz__text">I frequently forget appointments or important deadlines.</div>
+								<div class="quiz__options options">
+									<div class="options__item">
+										<input id="o_3" class="options__input" type="radio" value="false" name="quiz-step-2">
+										<label for="o_3" class="options__label"><span class="options__text">Fully Disagree</span></label>
+									</div>
+									<div class="options__item">
+										<input id="o_4" class="options__input" type="radio" value="true" name="quiz-step-2">
+										<label for="o_4" class="options__label"><span class="options__text">Fully Agree</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="quiz__step" data-quiz-step>
+								<div class="quiz__title">Memory</div>
+								<div class="quiz__text">I frequently forget appointments or important deadlines.</div>
+								<div class="quiz__options options">
+									<div class="options__item">
+										<input id="o_5" class="options__input" type="radio" value="false" name="quiz-step-3">
+										<label for="o_5" class="options__label"><span class="options__text">Fully Disagree</span></label>
+									</div>
+									<div class="options__item">
+										<input id="o_6" class="options__input" type="radio" value="true" name="quiz-step-3">
+										<label for="o_6" class="options__label"><span class="options__text">Fully Agree</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="quiz__step" data-quiz-step>
+								<div class="quiz__title">Problem-Solving</div>
+								<div class="quiz__text">I find it challenging to identify effective solutions to complex problems.</div>
+								<div class="quiz__options options">
+									<div class="options__item">
+										<input id="o_7" class="options__input" type="radio" value="false" name="quiz-step-3">
+										<label for="o_7" class="options__label"><span class="options__text">Fully Disagree</span></label>
+									</div>
+									<div class="options__item">
+										<input id="o_8" class="options__input" type="radio" value="true" name="quiz-step-3">
+										<label for="o_8" class="options__label"><span class="options__text">Fully Agree</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="quiz__step" data-quiz-step>
+								<div class="quiz__title">Cognitive Flexibility</div>
+								<div class="quiz__text">I find it difficult to switch between different tasks efficiently.</div>
+								<div class="quiz__options options">
+									<div class="options__item">
+										<input id="o_9" class="options__input" type="radio" value="false" name="quiz-step-3">
+										<label for="o_9" class="options__label"><span class="options__text">Fully Disagree</span></label>
+									</div>
+									<div class="options__item">
+										<input id="o_10" class="options__input" type="radio" value="true" name="quiz-step-3">
+										<label for="o_10" class="options__label"><span class="options__text">Fully Agree</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="quiz__step" data-quiz-step>
+								<div class="quiz__title">Executive Function</div>
+								<div class="quiz__text">I find it difficult to switch between different tasks efficiently.</div>
+								<div class="quiz__options options">
+									<div class="options__item">
+										<input id="o_11" class="options__input" type="radio" value="false" name="quiz-step-3">
+										<label for="o_11" class="options__label"><span class="options__text">Fully Disagree</span></label>
+									</div>
+									<div class="options__item">
+										<input id="o_12" class="options__input" type="radio" value="true" name="quiz-step-3">
+										<label for="o_12" class="options__label"><span class="options__text">Fully Agree</span></label>
+									</div>
+								</div>
+							</div>
+							<div class="quiz__control control-quiz">
+								<button type="button" class="control-quiz__button control-quiz__button_prev _icon-arrow-right"></button>
+								<button type="button" class="control-quiz__button control-quiz__button_next _icon-arrow-right"><span>Finalize</span></button>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-quiz-end" aria-hidden="true" class="popup popup_quiz">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__header">
+						<div class="popup__title">Your congintive test Results!</div>
+
+						<div class="popup__text text">Lorem ipsum dolor sit amet consectetur. Vitae mi risus tellus nulla tristique. mi risus tellus. mi risus tellus nulla tristique. </div>
+
+						<div class="popup__quiz-tags">
+							<div class="popup__quiz-tag quiz-tag">Processing Speed</div>
+							<div class="popup__quiz-tag quiz-tag">Memory</div>
+							<div class="popup__quiz-tag quiz-tag">Problem-Solving</div>
+						</div>
+
+						<div class="popup__buttons">
+							<button type="button" class="popup__button button"><span>Upgrade your skills free</span></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div id="popup-quiz-offer" aria-hidden="true" class="popup popup_quiz">
+			<div class="popup__wrapper">
+				<div class="popup__content">
+					<button data-close type="button" class="popup__close _icon-close"></button>
+
+					<div class="popup__header">
+						<div class="popup__title">Cognitive Function <br> Assessment Questionnaire</div>
+
+						<div class="popup__text text">For each statement below, select the option that most accurately reflects your experience. Choose from: "Fully Disagree, " Fully Agree." <br> All questions must be answered to receive your personalized cognitive assessment. </div>
+
+						<div class="popup__buttons">
+							<button data-close type="button" class="popup__button button button_grey"><span>Leave</span></button>
+							<button data-popup="#popup-quiz" type="button" class="popup__button button"><span>Fully Agree</span></button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20260203143244"></script>
+</body>
+
+</html>

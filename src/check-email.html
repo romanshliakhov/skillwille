@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Check your email"
+})
+
+<body>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+
+			<section class="auth">
+				<div class="auth__container">
+
+					<header class="auth__header">
+						<div class="auth__title">Check your email</div>
+						<div class="auth__text text">We sent a password reset link to braintrain@user.com</div>
+					</header>
+
+					<form action="#" class="auth__form form">
+						<div class="form__fields">
+							<label class="form__field field field_second">
+								<div class="field__title">Username/email address</div>
+								<input autocomplete="off" type="text" name="form[]" placeholder="Email address" class="field__input input input_big input_second">
+							</label>
+						</div>
+
+						<div class="form__buttons">
+							<button type="button" class="form__button button button_big">
+								<span>Confirm</span>
+							</button>
+							<a href="#" class="form__button-back">Back to log in</a>
+						</div>
+					</form>
+
+					<div class="auth__assets">
+						<div class="auth__assets-line">Didn’t receive the email? <a href="#">Click to resend</a></div>
+					</div>
+
+				</div>
+			</section>
+
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_js.htm',{})
+</body>
+
+</html>

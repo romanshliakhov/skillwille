@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Popups"
+})
+
+<body>
+    <div class="wrapper">
+        <main class="page">
+
+            <style>
+                .popups-block {
+                    padding: 100px 0;
+                }
+
+                .popups-block__container {}
+
+                .popups-block__title {
+                    font-size: 40px;
+                    line-height: 120%;
+                    margin-bottom: 30px;
+                }
+
+                .popups-block__items {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                }
+            </style>
+
+            <section class="popups-block">
+                <div class="popups-block__container">
+                    <div class="popups-block__title">Попапи:</div>
+                    <div class="popups-block__items">
+                        <button class="popups-block__button button button_second" data-popup="#popup-quiz-start">Quiz - Start</button>
+                        <button class="popups-block__button button button_second" data-popup="#popup-quiz">Quiz</button>
+                        <button class="popups-block__button button button_second" data-popup="#popup-quiz-end">Quiz - End</button>
+                        <button class="popups-block__button button button_second" data-popup="#popup-quiz-offer">Quiz - Offer</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+    @@include('html/_backend_ex.html',{})
+</body>
+
+</html>

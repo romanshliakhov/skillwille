@@ -1,0 +1,18 @@
+%ic {
+	font-family: iconfont;
+}
+
+[class*="_icon-"]::before {
+	@extend %ic;
+}
+[class*="_icon-close"]::before {
+	content: "\f101";
+}
+[class*="_icon-check"]::before {
+	content: "\f102";
+}
+[class*="_icon-arrow-right"]::before {
+	content: "\f103";
+}
+
+$iconArrowRight: "\f103";

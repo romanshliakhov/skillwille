@@ -1,0 +1,238 @@
+//<FORM>
+
+// <BUTTONS>
+// Сніппет (HTML): btn
+@import "button";
+
+// <INPUTS>
+// Сніппет (HTML): inp
+@import "input";
+
+// <CHECK>
+// Сніппет (HTML): chk
+@import "checkbox";
+
+// <RADIO>
+// Сніппет (HTML): opt
+@import "radio";
+
+// <SELECT>
+// Сніппет (HTML): sel
+@import "select";
+
+// <RATING>
+// Сніппет (HTML): rating
+// @import "rating";
+
+// <QUANTITY>
+// Сніппет (HTML): qa
+// @import "quantity";
+
+// <RANGE>
+// Сніппет (HTML):
+// @import "range";
+
+// <CALENDAR>
+// Сніппет (HTML):
+// @import "datepicker";
+
+.field {
+	&__title {
+		font-weight: 600;
+		font-size: toRem(14);
+		line-height: 143%;
+		color: #b2b2b2;
+		margin-bottom: toRem(6);
+
+		.field_second & {
+			color: #2a2a2a;
+		}
+	}
+
+	&__input {
+	}
+}
+
+.valid-password {
+	display: grid;
+	gap: toRem(12);
+
+	&__line {
+		font-size: toRem(14);
+		line-height: 142.9%; /* 20/14 */
+		color: #737373;
+
+		display: flex;
+		align-items: center;
+		gap: toRem(8);
+
+		&::before {
+			align-self: flex-start;
+			flex: 0 0 toRem(20);
+			font-size: toRem(12);
+			color: #f8f9ec;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			background-color: #2a2a2a;
+			border-radius: 50%;
+		}
+	}
+}
+
+.form {
+	border-radius: 16px;
+	padding: 32px 40px;
+	background-color: #f8f9ec;
+
+	& > * {
+		margin-bottom: toRem(24);
+	}
+	&__fields {
+		& > * {
+			margin-bottom: toRem(22);
+		}
+
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__field {
+		width: 100%;
+	}
+
+	&__assets {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		gap: toRem(10);
+	}
+
+	&__checkbox {
+	}
+
+	&__assets-link {
+		font-weight: 600;
+		font-size: toRem(14);
+		line-height: 143%;
+		color: #2a2a2a;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__valid-password {
+	}
+
+	&__text {
+		line-height: 138%;
+		text-align: center;
+		color: #312f37;
+	}
+
+	&__buttons {
+		display: grid;
+		justify-items: center;
+		& > * {
+			margin-bottom: toRem(16);
+
+			& + .form__button-back {
+				margin-top: toRem(16);
+			}
+		}
+
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__button {
+		width: 100%;
+	}
+
+	&__button-back {
+		font-family: var(--third-family);
+		font-weight: 600;
+		font-size: toRem(14);
+		line-height: 143%;
+		color: #312f37;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+//========================================================================================================================================================
+
+.form-profile {
+	&__fields {
+		display: grid;
+		@include adaptiveValue("gap", 40, 30);
+
+		&:not(:last-child) {
+			@include adaptiveValue("margin-bottom", 80, 40);
+		}
+	}
+
+	&__field {
+		width: 100%;
+
+		.field__title {
+			margin-bottom: toRem(20);
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: flex-end;
+		gap: toRem(10);
+	}
+
+	&__button {
+		min-width: toRem(115);
+
+		&:not(.button_second) {
+			color: #2A2A2A;
+			background-color: #F6F3EC;
+		}
+	}
+}
+
+//========================================================================================================================================================
+
+.up-balance-form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	& > * {
+		@include adaptiveValue("margin-bottom", 30, 30);
+	}
+	&__field {
+		width: 100%;
+	}
+
+	&__options {
+		width: 100%;
+	}
+
+	&__button {
+		align-self: flex-end;
+	}
+	& > :last-child {
+		margin-bottom: 0;
+		width: 100%;
+	}
+}
+
+//========================================================================================================================================================

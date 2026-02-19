@@ -1,0 +1,393 @@
+body::after {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+.popup-show body::after {
+	opacity: 1;
+}
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+}
+.popup_show {
+	z-index: 150;
+	visibility: visible;
+	overflow-x: hidden;
+	overflow-y: auto;
+	pointer-events: auto;
+}
+.popup_show .popup__content {
+	visibility: visible;
+	transform: scale(1);
+}
+.popup__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	flex: 1 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup__content {
+	visibility: hidden;
+	transform: scale(0);
+	transition: transform 0.3s ease 0s;
+	background-color: #f8f9ec;
+	width: 100%;
+	max-width: toRem(874);
+	border-radius: toRem(16);
+
+	@include adaptiveValue("padding-block", 55, 40);
+	@include adaptiveValue("padding-inline", 53, 24, 0, $containerWidth, 991.98);
+
+	[class*="popup_quiz"] & {
+		min-height: toRem(538);
+	}
+
+	.lock & {
+		visibility: visible;
+	}
+}
+
+//========================================================================================================================================================
+
+.popup {
+	&_quiz {
+	}
+
+	&__wrapper {
+	}
+
+	&__content {
+		position: relative;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__close {
+		position: absolute;
+		left: calc(100% + toRem(9));
+		top: toRem(-29);
+		width: toRem(40);
+		aspect-ratio: 1;
+
+		background-color: #2a2a2a;
+		border-radius: 50%;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		font-size: toRem(24);
+		color: #f8f9ec;
+
+		transition: transform 0.2s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.15);
+			}
+		}
+
+		@media (max-width: $tablet) {
+			top: toRem(9);
+			right: toRem(9);
+			left: auto;
+		}
+	}
+
+	&__header {
+		max-width: toRem(608);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		& > * {
+			@include adaptiveValue("margin-bottom", 40, 30);
+		}
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
+		font-family: var(--font-family);
+		font-weight: 700;
+		font-size: toRem(32);
+		text-transform: capitalize;
+		text-align: center;
+		color: #2a2a2a;
+		text-wrap: balance;
+	}
+
+	&__text {
+		max-width: toRem(526);
+		line-height: 138%;
+		text-align: center;
+		color: #737373;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(10);
+	}
+
+	&__button {
+		min-width: toRem(115);
+	}
+
+	&__quiz-tags {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: toRem(10) toRem(20);
+
+		@media (max-width: $mobile) {
+			gap: toRem(10);
+		}
+	}
+	&__quiz-tag {
+	}
+
+	&__quiz {
+		width: 100%;
+		max-width: toRem(752);
+	}
+}
+
+//========================================================================================================================================================
+
+.quiz {
+	& > * {
+		@include adaptiveValue("margin-bottom", 80, 44);
+	}
+
+	&__header {
+		& > * {
+			@include adaptiveValue("margin-bottom", 40, 30);
+		}
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(10) toRem(20);
+
+		@media (max-width: $mobile) {
+			gap: toRem(10);
+		}
+	}
+
+	&__tag {
+	}
+
+	&__progress {
+	}
+
+	&__steps {
+		position: relative;
+	}
+
+	&__step {
+		position: relative;
+		display: none;
+		flex-direction: column;
+		align-items: center;
+		@include adaptiveValue("gap", 40, 24);
+
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+
+		&._show {
+			display: flex;
+		}
+
+		& > :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__title {
+		font-family: var(--font-family);
+		font-weight: 700;
+		font-size: toRem(32);
+		text-transform: capitalize;
+		text-align: center;
+		color: #2a2a2a;
+		text-wrap: balance;
+
+		max-width: toRem(425);
+	}
+
+	&__text {
+		line-height: 138%;
+		text-align: center;
+		color: #737373;
+		max-width: toRem(338);
+	}
+
+	&__options {
+		margin-top: toRem(40);
+
+		@media (min-width: toEm(600.98)) {
+			padding-inline: toRem(40);
+		}
+	}
+
+	&__control {
+		@media (min-width: toEm(600.98)) {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	&__error {
+		position: absolute;
+		width: 100%;
+		top: calc(100% + toRem(10));
+		left: 0;
+		text-align: center;
+
+		line-height: 138%;
+		text-align: center;
+		color: red;
+	}
+
+	& > :last-child {
+		margin-bottom: 0;
+	}
+}
+
+.progress-quiz {
+	&__line {
+		height: toRem(12);
+		background-color: #e9eae0;
+		border-radius: toRem(4);
+
+		display: flex;
+
+		&:not(:last-child) {
+			margin-bottom: toRem(20);
+		}
+
+		span {
+			display: inline-block;
+			height: 100%;
+			width: var(--progress-quiz);
+			background: linear-gradient(90deg, #000 0%, #9e9e9e 100%);
+			border-radius: toRem(4);
+
+			transition: all 0.2s ease;
+		}
+	}
+
+	&__counter {
+		font-weight: 400;
+		font-size: toRem(16);
+		line-height: 150%;
+		color: #737373;
+
+		span {
+			&::before {
+				content: var(--progress-quiz-index, "1");
+			}
+		}
+	}
+}
+.control-quiz {
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&__button {
+		pointer-events: all;
+		min-width: toRem(40);
+		height: toRem(40);
+		padding: toRem(4) toRem(8);
+
+		background-color: #e9eae0;
+		border-radius: toRem(20);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: toRem(10);
+
+		font-family: var(--font-family);
+		font-weight: 700;
+		font-size: toRem(16);
+		line-height: 200%;
+		color: #2a2a2a;
+
+		&::before {
+			order: 1;
+			font-size: toRem(24);
+			transition: transform 0.2s ease;
+		}
+		span {
+			display: none;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					transform: scale(1.15);
+				}
+			}
+		}
+		&_prev {
+			&::before {
+				transform: scaleX(-1);
+			}
+			@media (any-hover: hover) {
+				&:hover {
+					&::before {
+						transform: scaleX(-1) scale(1.15);
+					}
+				}
+			}
+		}
+
+		&_next {
+		}
+
+		&._last-step {
+			padding-inline: toRem(12);
+
+			span {
+				display: block;
+			}
+		}
+	}
+}
+
+//========================================================================================================================================================

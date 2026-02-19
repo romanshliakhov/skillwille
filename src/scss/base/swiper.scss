@@ -1,0 +1,123 @@
+// .pagination {
+//   display: flex;
+//   justify-content: center;
+//   gap: toRem(5);
+
+//   .swiper-pagination-bullet {
+//     cursor: pointer;
+//     display: inline-block;
+//     width: toRem(20);
+//     height: toRem(20);
+//     background-color: #bbb;
+
+//     transition: background-color 0.3s ease;
+
+//     @media (any-hover: hover) {
+//       &:hover {
+//         background-color: #000;
+//       }
+//     }
+//   }
+
+//   .swiper-pagination-bullet-active {
+//     background-color: #000;
+//   }
+// }
+
+// .navigation {
+//   display: flex;
+//   justify-content: flex-end;
+//   gap: toRem(5);
+
+//   &__button {
+//     display: inline-block;
+//     padding: toRem(5);
+//     width: toRem(40);
+//     height: toRem(40);
+//     background-color: #bbb;
+
+//     transition: background-color 0.3s ease;
+
+//     @media (any-hover: hover) {
+//       &:not([disabled]):hover {
+//         background-color: #000;
+//         color: #fff;
+//       }
+//     }
+
+//     &.button-prev {
+//     }
+//     &.button-next {
+//     }
+
+//     &[disabled] {
+//       opacity: 0.7;
+//       cursor: no-drop;
+//     }
+//   }
+// }
+
+// .fraction {
+//   &__current {
+//   }
+//   &__total {
+//     font-weight: 700;
+//   }
+// }
+
+// .slider-scrollbar {
+//   cursor: pointer;
+//   background-color: #bbb;
+//   height: toRem(10);
+
+//   &__drag {
+//     cursor: grab;
+//     height: 100%;
+//     background-color: #000;
+
+//     &:focus {
+//       cursor: grabbing;
+//     }
+//   }
+// }
+
+//========================================================================================================================================================
+
+.swiper {
+	overflow: hidden;
+}
+.swiper-initialized {
+	touch-action: pan-y;
+}
+.swiper-wrapper {
+	width: 100%;
+	height: 100%;
+	box-sizing: content-box;
+	display: flex;
+	position: relative;
+}
+.swiper-vertical {
+	.swiper-wrapper {
+		flex-direction: column;
+	}
+}
+.swiper-autoheight {
+	.swiper-wrapper {
+		align-items: flex-start;
+	}
+}
+.swiper-initialized {
+	.swiper-slide {
+		flex-shrink: 0;
+		// transition-property: transform;
+	}
+}
+.swiper-android {
+	.swiper-slide,
+	.swiper-wrapper {
+		transform: translate3d(0px, 0, 0);
+	}
+}
+.swiper-button-lock {
+	display: none !important;
+}

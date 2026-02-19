@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Your Profile"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="profile">
+                <div class="profile__container">
+                    <header class="profile__header profile-header">
+                        <h1 class="profile-header__title title">your Profile</h1>
+                        <div class="profile-header__text text">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                        </div>
+                        <nav class="profile-header__menu menu-profile">
+                            <div class="menu-profile__link _active">Profile</div>
+                            <a href="#" class="menu-profile__link">Test results</a>
+                            <a href="#" class="menu-profile__link">Top up balance</a>
+                            <a href="#" class="menu-profile__link">Payments history</a>
+                            <a href="#" class="menu-profile__link">Activity history</a>
+                        </nav>
+                    </header>
+
+                    <form action="#" class="profile__form form-profile">
+                        <div class="form-profile__fields">
+                            <label class="form-profile__field field">
+                                <div class="field__title">First name</div>
+                                <input autocomplete="off" type="text" name="form[]" placeholder="First name" class="field__input input">
+                            </label>
+                            <label class="form-profile__field field">
+                                <div class="field__title">First name</div>
+                                <input autocomplete="off" type="text" name="form[]" placeholder="First name" class="field__input input">
+                            </label>
+                            <label class="form-profile__field field">
+                                <div class="field__title">Old password</div>
+                                <input autocomplete="off" type="text" name="form[]" placeholder="Old password" class="field__input input">
+                            </label>
+                            <label class="form-profile__field field">
+                                <div class="field__title">New password</div>
+                                <input autocomplete="off" type="text" name="form[]" placeholder="New password" class="field__input input">
+                            </label>
+                            <label class="form-profile__field field">
+                                <div class="field__title">Repeat new password</div>
+                                <input autocomplete="off" type="text" name="form[]" placeholder="Repeat new password" class="field__input input">
+                            </label>
+                            <label class="form-profile__field field">
+                                <div class="field__title">Country</div>
+                                <select name="form[]" data-class-modif="dark">
+                                    <option value="" selected>Select a country...</option>
+                                    <option value="1">Germany</option>
+                                    <option value="2">France</option>
+                                    <option value="3">Italy</option>
+                                    <option value="4">Spain</option>
+                                    <option value="5">Portugal</option>
+                                    <option value="6">Netherlands</option>
+                                    <option value="7">Belgium</option>
+                                    <option value="8">Austria</option>
+                                    <option value="9">Switzerland</option>
+                                    <option value="10">Poland</option>
+                                    <option value="11">Czech Republic</option>
+                                    <option value="12">Hungary</option>
+                                    <option value="13">Sweden</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="form-profile__buttons">
+                            <button type="button" class="form-profile__button button">Cancel</button>
+                            <button type="button" class="form-profile__button button button_second">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

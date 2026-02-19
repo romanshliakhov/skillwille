@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Profile Empty"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="profile">
+                <div class="profile__container">
+                    <header class="profile__header profile-header">
+                        <h1 class="profile-header__title title">your Profile</h1>
+                        <div class="profile-header__text text">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                        </div>
+                        <nav class="profile-header__menu menu-profile">
+                            <a href="#" class="menu-profile__link">Profile</a>
+                            <a href="#" class="menu-profile__link">Test results</a>
+                            <a href="#" class="menu-profile__link">Top up balance</a>
+                            <div class="menu-profile__link _active">Payments history</div>
+                            <a href="#" class="menu-profile__link">Activity history</a>
+                        </nav>
+                    </header>
+
+                    <div class="profile__empty">
+                        <div class="profile__empty-title title-second">You don’t have any payments yet</div>
+                        <div class="profile__empty__text text">Just click below to easily top up</div>
+                        <a href="#" class="profile__empty-button button button_second">Top up</a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>

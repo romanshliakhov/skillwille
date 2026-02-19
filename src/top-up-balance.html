@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/_head.htm',{
+"title":"Top up balance"
+})
+
+<body>
+    <div class="wrapper">
+        @@include('html/_header.htm',{})
+        <main class="page">
+
+            <section class="profile">
+                <div class="profile__container">
+                    <header class="profile__header profile-header">
+                        <h1 class="profile-header__title title">your Profile</h1>
+                        <div class="profile-header__text text">
+                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                        </div>
+                        <nav class="profile-header__menu menu-profile">
+                            <a href="#" class="menu-profile__link">Profile</a>
+                            <a href="#" class="menu-profile__link">Test results</a>
+                            <div class="menu-profile__link _active">Top up balance</div>
+                            <a href="#" class="menu-profile__link">Payments history</a>
+                            <a href="#" class="menu-profile__link">Activity history</a>
+                        </nav>
+                    </header>
+
+                    <div class="profile__balance up-balance">
+                        <div class="up-balance__column">
+                            <h2 class="up-balance__title title-second">Top up your balance quickly</h2>
+
+                            <div class="up-balance__body">
+                                <div class="up-balance__advantage">
+                                    <div class="up-balance__advantage-image"><img class="ibg" src="@img/profile/balance-01.jpg" alt="Image"></div>
+                                    <div class="up-balance__advantage-content">Easy in maximum 20 minutes</div>
+                                </div>
+                                <div class="up-balance__advantage">
+                                    <div class="up-balance__advantage-image"><img class="ibg" src="@img/profile/balance-02.jpg" alt="Image"></div>
+                                    <div class="up-balance__advantage-content">All countries all over the world</div>
+                                </div>
+                                <div class="up-balance__advantage">
+                                    <div class="up-balance__advantage-image"><img class="ibg" src="@img/profile/balance-03.jpg" alt="Image"></div>
+                                    <div class="up-balance__advantage-content">Flexible payment options</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="up-balance__column">
+                            <h2 class="up-balance__title title-second">Choose the amount to top up</h2>
+
+                            <form action="#" class="up-balance__form up-balance-form">
+                                <label class="up-balance-form__field field">
+                                    <input autocomplete="off" type="text" name="form[]" placeholder="First name" class="field__input input">
+                                </label>
+                                <div class="up-balance-form__options amount-options">
+                                    <div class="amount-options__item">
+                                        <input id="o_1" class="amount-options__input" checked type="radio" value="1" name="option">
+                                        <label for="o_1" class="amount-options__label"><span class="amount-options__text">€&nbsp;10</span></label>
+                                    </div>
+                                    <div class="amount-options__item">
+                                        <input id="o_2" class="amount-options__input" type="radio" value="2" name="option">
+                                        <label for="o_2" class="amount-options__label"><span class="amount-options__text">€&nbsp;15</span></label>
+                                    </div>
+                                    <div class="amount-options__item">
+                                        <input id="o_3" class="amount-options__input" type="radio" value="3" name="option">
+                                        <label for="o_3" class="amount-options__label"><span class="amount-options__text">€&nbsp;20</span></label>
+                                    </div>
+                                    <div class="amount-options__item">
+                                        <input id="o_4" class="amount-options__input" type="radio" value="4" name="option">
+                                        <label for="o_4" class="amount-options__label"><span class="amount-options__text">€&nbsp;25</span></label>
+                                    </div>
+                                    <div class="amount-options__item">
+                                        <input id="o_5" class="amount-options__input" type="radio" value="5" name="option">
+                                        <label for="o_5" class="amount-options__label"><span class="amount-options__text">€&nbsp;30</span></label>
+                                    </div>
+                                    <div class="amount-options__item">
+                                        <input id="o_6" class="amount-options__input" type="radio" value="6" name="option">
+                                        <label for="o_6" class="amount-options__label"><span class="amount-options__text">€&nbsp;35</span></label>
+                                    </div>
+                                    <div class="amount-options__item">
+                                        <input id="o_7" class="amount-options__input" type="radio" value="7" name="option">
+                                        <label for="o_7" class="amount-options__label"><span class="amount-options__text">€&nbsp;40</span></label>
+                                    </div>
+                                </div>
+                                <button type="button" class="up-balance-form__button button button_second">Top up your balance</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="profile__reward reward-balance">
+                        <label class="reward-balance__field field">
+                            <div class="field__title">Search:</div>
+                            <input autocomplete="off" type="text" name="form[]" placeholder="Search" class="field__input input">
+                        </label>
+                        <label class="reward-balance__field field">
+                            <div class="field__title">Page Size:</div>
+                            <select name="form[]" data-class-modif="dark">
+                                <option value="5">5</option>
+                                <option value="10">10</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                            </select>
+                        </label>
+
+                        <form class="reward-balance__form rs-my-reward-table-form" method="POST">
+                            <table class="my_reward_table demo shop_table my_account_orders table-bordered default footable-loaded footable" data-filter="#filters" data-page-size="5" data-page-previous-text="prev" data-filter-text-only="true" data-page-next-text="next" data-limit-navigation="">
+                                <thead>
+                                    <tr>
+                                        <th data-toggle="true" data-sort-initial="true" class="footable-visible footable-first-column footable-sortable footable-sorted">S.No<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="" class="footable-visible footable-sortable">Username<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="" class="footable-visible footable-sortable">Reward for<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="phone,tablet" class="footable-visible footable-sortable">Earned Coins<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="phone,tablet" class="footable-visible footable-sortable">Redeemed Coins<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="phone,tablet" class="footable-visible footable-sortable">Coins Expires On<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="phone,tablet" class="footable-visible footable-sortable">Total Coins<span class="footable-sort-indicator"></span></th>
+                                        <th data-hide="phone,tablet" class="footable-visible footable-last-column footable-sortable">Earned Date<span class="footable-sort-indicator"></span></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>LoremPro</td>
+                                        <td>Lorem</td>
+                                        <td>123</td>
+                                        <td>444</td>
+                                        <td>11</td>
+                                        <td>1</td>
+                                        <td>30.01.2026</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>LoremPro</td>
+                                        <td>Lorem</td>
+                                        <td>123</td>
+                                        <td>444</td>
+                                        <td>11</td>
+                                        <td>1</td>
+                                        <td>30.01.2026</td>
+                                    </tr>
+                                </tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="7" class="footable-visible">
+                                            <div class="pagination pagination-centered">
+                                                <ul></ul>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </form>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        @@include('html/_footer.htm',{})
+        @@include('html/_popup.htm',{})
+    </div>
+    @@include('html/_js.htm',{})
+</body>
+
+</html>
