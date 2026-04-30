@@ -10,7 +10,7 @@
 	// .select__title
 	&__title {
 		border: toRem(1) solid #737373;
-		background-color: rgba(255, 255, 255, 0.20);
+		background-color: rgba(255, 255, 255, 0.2);
 
 		text-align: left;
 		border-radius: toRem(10);
@@ -22,7 +22,7 @@
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: toRem(16);
-		color: rgba(255, 255, 255, 0.60);
+		color: rgba(255, 255, 255, 0.6);
 
 		._select-open & {
 			border-radius: toRem(16) toRem(16) 0 0;
@@ -33,14 +33,14 @@
 
 		.select_dark & {
 			border: toRem(1) solid #737373;
-			background-color: rgba(255, 255, 255, 0.20);
+			background-color: rgba(255, 255, 255, 0.2);
 		}
 
 		._select-active & {
 			color: #fff;
 		}
 		._select-active.select_dark & {
-			color: #2A2A2A;
+			color: #2a2a2a;
 		}
 		._select-focus.select_dark & {
 			border-color: #f8f9ec;
@@ -101,9 +101,11 @@
 		white-space: nowrap;
 	}
 	&__input {
-		width: 100%;
-		background-color: transparent;
-		height: 100%;
+		margin: 0 toRem(15) toRem(10);
+		width: stretch;
+
+		@extend .input, .input_second;
+		min-height: toRem(50);
 	}
 	// .select__options
 	&__options {
@@ -116,13 +118,13 @@
 		border: toRem(1) solid #737373;
 		background-color: rgba(2, 11, 43, 0.95);
 		box-shadow: 2px 6px 15px 0 rgba(0, 0, 0, 0.25);
-		padding: 10px 0px 5px 0px;
+		padding: 10px 0px;
 
 		._select-open & {
 		}
 
 		.select_dark & {
-			background-color: #F6F3EC;
+			background-color: #f6f3ec;
 			border-color: #f8f9ec;
 		}
 	}
@@ -151,7 +153,7 @@
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: toRem(16);
-		color: rgba(255, 255, 255, 0.60);
+		color: rgba(255, 255, 255, 0.6);
 
 		&._select-selected {
 			// background-color: #F65C5F;
@@ -165,14 +167,18 @@
 		}
 
 		.select_dark & {
-			color: #2A2A2A;
+			color: #2a2a2a;
 
 			@media (any-hover: hover) {
 				&:hover {
-					background: #F65C5F;
-					color: #F6F3EC;
+					background: #f65c5f;
+					color: #f6f3ec;
 				}
 			}
+		}
+
+		&[hidden] {
+			display: none;
 		}
 	}
 
@@ -184,6 +190,13 @@
 	&__asset {
 	}
 	&__text {
+	}
+
+	&__not-found {
+		margin: 0 toRem(15);
+
+		font-weight: 500;
+		line-height: 115%;
 	}
 
 	&--show-top {
