@@ -66,6 +66,7 @@ class SelectConstructor {
 			classSelectOptions: "select__options", // Випадаючий список
 			classSelectOptionsScroll: "select__scroll", // Оболонка при скролі
 			classSelectOption: "select__option", // Пункт
+			classSelectNotFound: "select__not-found", // Повідомлення "нічого не знайдено"
 			classSelectContent: "select__content", // Оболонка контенту в заголовку
 			classSelectRow: "select__row", // Ряд
 			classSelectData: "select__asset", // Додаткові дані
@@ -322,7 +323,20 @@ class SelectConstructor {
 		const selectItemTitle = this.getSelectElement(selectItem, this.selectClasses.classSelectTitle).selectElement
 		if (selectItemTitle) selectItemTitle.remove()
 		selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect))
-		originalSelect.hasAttribute("data-search") ? this.searchActions(selectItem) : null
+		// Скидаємо стан пошуку (input живе в .select__options і не перебудовується разом із заголовком)
+		if (originalSelect.hasAttribute("data-search")) {
+			const selectInput = this.getSelectElement(selectItem, this.selectClasses.classSelectInput).selectElement
+			if (selectInput && selectInput.value) {
+				selectInput.value = ""
+				selectItem
+					.querySelectorAll(this.getSelectClass(this.selectClasses.classSelectOption))
+					.forEach(option => (option.hidden = false))
+				const selectNotFound = selectItem.querySelector(
+					this.getSelectClass(this.selectClasses.classSelectNotFound)
+				)
+				if (selectNotFound) selectNotFound.hidden = true
+			}
+		}
 	}
 	// Конструктор значення заголовка
 	getSelectTitleValue(selectItem, originalSelect) {
@@ -362,20 +376,14 @@ class SelectConstructor {
 		this.getSelectedOptionsData(originalSelect).values.length
 			? selectItem.classList.add(this.selectClasses.classSelectActive)
 			: selectItem.classList.remove(this.selectClasses.classSelectActive)
-		// Повертаємо поле введення для пошуку чи текст
-		if (originalSelect.hasAttribute("data-search")) {
-			// Виводимо поле введення для пошуку
-			return `<div class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}"><input autocomplete="off" type="text" placeholder="${selectTitleValue}" data-placeholder="${selectTitleValue}" class="${this.selectClasses.classSelectInput}"></span></div>`
-		} else {
-			// Якщо вибрано елемент зі своїм класом
-			const customClass =
-				this.getSelectedOptionsData(originalSelect).elements.length &&
-				this.getSelectedOptionsData(originalSelect).elements[0].dataset.class
-					? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}`
-					: ""
-			// Виводимо текстове значення
-			return `<button type="button" class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}${pseudoAttributeClass}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`
-		}
+		// Якщо вибрано елемент зі своїм класом
+		const customClass =
+			this.getSelectedOptionsData(originalSelect).elements.length &&
+			this.getSelectedOptionsData(originalSelect).elements[0].dataset.class
+				? ` ${this.getSelectedOptionsData(originalSelect).elements[0].dataset.class}`
+				: ""
+		// Виводимо текстове значення
+		return `<button type="button" class="${this.selectClasses.classSelectTitle}"><span${pseudoAttribute} class="${this.selectClasses.classSelectValue}${pseudoAttributeClass}"><span class="${this.selectClasses.classSelectContent}${customClass}">${selectTitleValue}</span></span></button>`
 	}
 	// Конструктор даних для значення заголовка
 	getSelectElementContent(selectOption) {
@@ -444,6 +452,18 @@ class SelectConstructor {
 			) {
 				selectOptions = selectOptions.filter(option => option.value)
 			}
+			// Якщо увімкнено пошук, додаємо поле введення першим всередині .select__options
+			if (originalSelect.hasAttribute("data-search")) {
+				// Плейсхолдер пошуку: значення з data-search, інакше — data-placeholder селекту
+				const searchAttrValue = originalSelect.getAttribute("data-search")
+				const searchPlaceholder =
+					searchAttrValue && searchAttrValue.trim()
+						? searchAttrValue
+						: originalSelect.dataset.placeholder
+							? originalSelect.dataset.placeholder
+							: ""
+				selectOptionsHTML += `<input autocomplete="off" type="text" placeholder="${searchPlaceholder}" data-placeholder="${searchPlaceholder}" class="${this.selectClasses.classSelectInput}">`
+			}
 			// Будуємо та виводимо основну конструкцію
 			selectOptionsHTML += `<div ${selectOptionsScroll} ${selectOptionsScroll ? `style="max-height: ${customMaxHeightValue}px"` : ""} class="${this.selectClasses.classSelectOptionsScroll}">`
 			selectOptions.forEach(selectOption => {
@@ -451,6 +471,10 @@ class SelectConstructor {
 				selectOptionsHTML += this.getOption(selectOption, originalSelect)
 			})
 			selectOptionsHTML += `</div>`
+			// Якщо вказано data-search-not-found, додаємо блок повідомлення (прихований за замовчуванням)
+			if (originalSelect.hasAttribute("data-search") && originalSelect.dataset.searchNotFound) {
+				selectOptionsHTML += `<div hidden class="${this.selectClasses.classSelectNotFound}">${originalSelect.dataset.searchNotFound}</div>`
+			}
 			return selectOptionsHTML
 		}
 	}
@@ -628,14 +652,21 @@ class SelectConstructor {
 		const selectOptions = this.getSelectElement(selectItem, this.selectClasses.classSelectOptions).selectElement
 		const selectOptionsItems = selectOptions.querySelectorAll(`.${this.selectClasses.classSelectOption} `)
 		const _this = this
+		const selectNotFound = selectItem.querySelector(`.${this.selectClasses.classSelectNotFound}`)
 		selectInput.addEventListener("input", function () {
+			let visibleCount = 0
 			selectOptionsItems.forEach(selectOptionsItem => {
 				if (selectOptionsItem.textContent.toUpperCase().includes(selectInput.value.toUpperCase())) {
 					selectOptionsItem.hidden = false
+					visibleCount++
 				} else {
 					selectOptionsItem.hidden = true
 				}
 			})
+			// Показуємо/ховаємо блок "нічого не знайдено"
+			if (selectNotFound) {
+				selectNotFound.hidden = visibleCount > 0 || !selectInput.value
+			}
 			// Якщо список закритий відкриваємо
 			selectOptions.hidden === true ? _this.selectAction(selectItem) : null
 		})
