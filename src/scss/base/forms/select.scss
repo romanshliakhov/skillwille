@@ -9,19 +9,20 @@
 	}
 	// .select__title
 	&__title {
-		color: inherit;
-		text-align: left;
 		border: toRem(1) solid #737373;
-		background-color: #F6F3EC;
+		background-color: rgba(255, 255, 255, 0.20);
+
+		text-align: left;
+		border-radius: toRem(10);
+		padding: 0 toRem(17);
 
 		cursor: pointer;
 		width: 100%;
-		border-radius: toRem(16);
 
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: toRem(16);
-		color: #2A2A2A;
+		color: rgba(255, 255, 255, 0.60);
 
 		._select-open & {
 			border-radius: toRem(16) toRem(16) 0 0;
@@ -31,13 +32,12 @@
 		}
 
 		.select_dark & {
-			background-color: #F6F3EC;
-			border-color: #F6F3EC;
-			color: #2A2A2A;
+			border: toRem(1) solid #737373;
+			background-color: rgba(255, 255, 255, 0.20);
 		}
 
 		._select-active & {
-			color: #2a2a2a;
+			color: #fff;
 		}
 		._select-active.select_dark & {
 			color: #2A2A2A;
@@ -51,12 +51,12 @@
 		display: flex;
 		min-width: 0;
 		align-items: center;
-		height: toRem(40);
-		padding: 0 toRem(15);
+		height: toRem(60);
+		padding: 0;
 		gap: toRem(10);
 
 		.select_big & {
-			min-height: toRem(42);
+			min-height: toRem(60);
 		}
 
 		> * {
@@ -107,16 +107,15 @@
 	}
 	// .select__options
 	&__options {
-		color: #2A2A2A;
+		color: #fff;
 		position: absolute;
 		top: calc(100% - toRem(1));
 		border-radius: 0 0 4px 4px;
 		min-width: 100%;
 		left: 0;
-		background-color: #fff;
 		border: toRem(1) solid #737373;
-		background-color: #F6F3EC;
-		// border-top: 0;
+		background-color: rgba(2, 11, 43, 0.95);
+		box-shadow: 2px 6px 15px 0 rgba(0, 0, 0, 0.25);
 		padding: 10px 0px 5px 0px;
 
 		._select-open & {
@@ -152,7 +151,7 @@
 		font-family: var(--font-family);
 		font-weight: 400;
 		font-size: toRem(16);
-		color: #000;
+		color: rgba(255, 255, 255, 0.60);
 
 		&._select-selected {
 			// background-color: #F65C5F;
@@ -160,8 +159,8 @@
 
 		@media (any-hover: hover) {
 			&:hover {
-				background: #F65C5F;
-				color: #F6F3EC;
+				background: #022750;
+				color: #fff;
 			}
 		}
 

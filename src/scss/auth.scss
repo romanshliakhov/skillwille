@@ -4,14 +4,73 @@
 	flex-direction: column;
 	justify-content: center;
 
+
 	&__container {
-		@include adaptiveValue("padding-top", 90, 45);
-		@include adaptiveValue("padding-bottom", 90, 45);
+		position: relative;
+		@include adaptiveValue("margin-top", 90, 45);
+		@include adaptiveValue("margin-bottom", 90, 45);
+		@include adaptiveValue("padding-top", 40, 30);
+		@include adaptiveValue("padding-bottom", 50, 30);
+
 		max-width: toRem(390);
 		width: 100%;
 
+		background: rgba(2, 11, 43, 0.75);
+		box-shadow: 2px 6px 15px 0 rgba(0, 0, 0, 0.25);
+		border-radius: toRem(20);
+
 		& > :last-child {
 			margin-bottom: 0;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			display: block;
+			left: 50%;
+			transform: translate(-50%, 0%);
+			width: 100%;
+			height: 100%;
+			border-radius:693.643px;
+			background: #0AF;
+			filter: blur(175px);
+			z-index: -1;
+			pointer-events: none;
+		}
+
+		@media (max-width: $mobile) {
+			margin-left: toRem(20);
+			margin-right: toRem(20);
+			width: fit-content;
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: toRem(15);
+		right: toRem(15);
+		width: toRem(40);
+		aspect-ratio: 1;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		font-size: toRem(24);
+		color: #f8f9ec;
+
+		transition: transform 0.2s ease;
+
+		@media (any-hover: hover) {
+			&:hover {
+				transform: scale(1.15);
+			}
+		}
+
+		@media (max-width: $tablet) {
+			top: toRem(9);
+			right: toRem(9);
+			left: auto;
 		}
 	}
 
@@ -25,9 +84,11 @@
 	}
 
 	&__title {
-		font-weight: 600;
+		font-family: var(--heading-family);
+		font-weight: 400;
 		font-size: toRem(32);
 		line-height: 137.5%; /* 44/32 */
+		text-transform: uppercase;
 	}
 
 	&__text {
@@ -36,6 +97,9 @@
 
 	&__form {
 		margin-bottom: toRem(32);
+		display: flex;
+		flex-direction: column;
+		gap: toRem(25);
 	}
 
 	&__assets {
@@ -47,9 +111,10 @@
 
 	&__assets-line {
 		font-weight: 400;
-		font-size: toRem(14);
+		font-size: toRem(16);
 		line-height: 150%;
-		color: #2A2A2A;
+		color: #fff;
+
 		a {
 			font-weight: 600;
 

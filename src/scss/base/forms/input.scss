@@ -12,22 +12,23 @@ textarea {
 	width: 100%;
 	display: block;
 	caret-color: inherit;
-	border-radius: toRem(16);
-	padding: 0 toRem(14);
-	min-height: toRem(40);
+	border-radius: toRem(10);
+	padding: 0 toRem(17);
+	min-height: toRem(60);
 	outline: toRem(1) solid transparent;
-	background-color: #F6F3EC;
+	background-color: rgba(255, 255, 255, 0.20);
 
 	font-family: var(--font-family);
 	font-weight: 400;
 	font-size: toRem(16);
-	color: #2A2A2A;
+	color: #fff;
 
 	&:focus {
-		outline-color: #2A2A2A;
+		outline-color: #fff;
 	}
+
 	&::placeholder {
-		color: #2A2A2A;
+		color: rgba(255, 255, 255, 0.60);
 	}
 
 	&._form-focus {
@@ -36,20 +37,20 @@ textarea {
 	}
 
 	&_big {
-		min-height: toRem(42);
+		min-height: toRem(60);
 	}
 	&_second {
 		outline: 0;
 		border: toRem(1) solid #737373;
 
-		background-color: #F6F3EC;
-		color: #2A2A2A;
+		background-color: rgba(255, 255, 255, 0.20);
+		color: #fff;
 
 		&:focus {
-			border-color: #000;
+			border-color: #fff;
 		}
 		&::placeholder {
-			color: #2A2A2A;
+			color: rgba(255, 255, 255, 0.60);
 		}
 	}
 }

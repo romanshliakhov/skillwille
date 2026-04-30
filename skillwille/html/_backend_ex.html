@@ -1,0 +1,28 @@
+<!-- This is the correct way to open/close a modal window. DELETE this comment !!! -->
+<script>
+	window.addEventListener('load', () => {
+		let popupOpened = false
+
+		const welcomePopupInterval = setInterval(() => {
+			// If the user has the popup open, we don't show them the "welcome" popup.
+
+			if (!flsModules.popup.isOpen) {
+				flsModules.popup.open('#popup-quiz-offer');
+				popupOpened = true;
+				clearInterval(welcomePopupInterval);
+			}
+		}, 3000);
+		// flsModules.popup.close('#popup-quiz-offer')
+
+
+
+		// You can listen to popup events, such as "beforePopupOpen," "afterPopupOpen," "beforePopupClose," and "afterPopupClose."
+
+		// document.addEventListener('beforePopupOpen', (e) => {
+		//     const popup = e.detail.popup
+
+		//     console.log(popup);
+
+		// })
+	})
+</script>

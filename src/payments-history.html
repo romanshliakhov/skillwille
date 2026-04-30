@@ -11,52 +11,129 @@
 
             <section class="profile">
                 <div class="profile__container">
-                    <header class="profile__header profile-header">
-                        <h1 class="profile-header__title title">your Profile</h1>
-                        <div class="profile-header__text text">
-                            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution</p>
+                    <div class="profile__aside">
+                        <div class="profile__info">
+                            <div class="profile__avatar"></div>
+                            <div class="profile__username">User name</div>
+                            <div class="profile__email">username@gmail.com</div>
                         </div>
-                        <nav class="profile-header__menu menu-profile">
-                            <a href="#" class="menu-profile__link">Profile</a>
+
+                        <nav class="profile__menu menu-profile">
+                            <div class="menu-profile__link _active">Profile</div>
                             <a href="#" class="menu-profile__link">Test results</a>
                             <a href="#" class="menu-profile__link">Top up balance</a>
-                            <div class="menu-profile__link _active">Payments history</div>
+                            <a href="#" class="menu-profile__link">Payments history</a>
                             <a href="#" class="menu-profile__link">Activity history</a>
                         </nav>
-                    </header>
+                    </div>
 
-                    <div class="profile__profile-history profile-history">
-                        <div class="profile-history__content">
-                            <div class="profile-history__title title-second">Your congintive test Results! </div>
-                            <div class="profile-history__text text">
-                                <p>Lorem ipsum dolor sit amet consectetur. Vitae mi risus tellus nulla tristique. mi risus tellus. mi risus tellus nulla tristique. </p>
+                     <div class="profile__box">
+                        <div class="profile-history">
+                            <div class="profile-history__activity">
+                                <h2 class="profile-history__title title-second">Activity History</h2>
+                                <ul class="profile-history__list">
+                                    <li class="profile-history__item">
+                                        <span class="profile-history__item-icon"></span>
+                                        <div class="profile-history__item-heading">Games Played</div>
+                                        <div class="profile-history__item-result title-second">0</div>
+                                    </li>
+                                    <li class="profile-history__item">
+                                        <span class="profile-history__item-icon"></span>
+                                        <div class="profile-history__item-heading">Total Time</div>
+                                        <div class="profile-history__item-result title-second">0h 0m</div>
+                                    </li>
+                                    <li class="profile-history__item">
+                                        <span class="profile-history__item-icon"></span>
+                                        <div class="profile-history__item-heading">Points Spent</div>
+                                        <div class="profile-history__item-result title-second">0.00</div>
+                                    </li>
+                                    <li class="profile-history__item">
+                                        <span class="profile-history__item-icon"></span>
+                                        <div class="profile-history__item-heading">Total Deposited</div>
+                                        <div class="profile-history__item-result title-second">110.00</div>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="profile-history__table">
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th>date</th>
-                                        <th>type</th>
-                                        <th>amount</th>
-                                        <th>status</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>12 Jan 2025</td>
-                                        <td>Balance top up</td>
-                                        <td>+€15</td>
-                                        <td><span class="status">Success</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>12 Jan 2025</td>
-                                        <td>Balance top up</td>
-                                        <td>+€15</td>
-                                        <td><span class="status status_red">Declined</span></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                            <!-- <div class="profile-history__bottom tabs">
+                                <div class="profile-history__tabs tabs__navigation">
+
+                                </div>
+
+                                <div class="profile-history__table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>date</th>
+                                                <th>type</th>
+                                                <th>amount</th>
+                                                <th>status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>12 Jan 2025</td>
+                                                <td>Balance top up</td>
+                                                <td>+€15</td>
+                                                <td><span class="status">Success</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>12 Jan 2025</td>
+                                                <td>Balance top up</td>
+                                                <td>+€15</td>
+                                                <td><span class="status status_red">Declined</span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> -->
+
+                            <div data-tabs class="profile-history__bottom tabs">
+                                <nav data-tabs-titles class="tabs__navigation">
+                                    <button data-tabs-title type="button" class="tabs__title _tab-active">Game Sessions</button>
+                                    <button data-tabs-title  type="button" class="tabs__title">Deposit History</button>
+                                </nav>
+
+                                <div data-tabs-body class="tabs__content">
+                                    <div class="tabs__body">
+                                        <div class="profile-history__empty">
+                                            <span class="profile-history__empty-icon"></span>
+                                            <div class="profile-history__empty-heading">No Deposit yet</div>
+                                            <a href="/games/" class="profile-history__empty-link button button_yellow">Browse Games</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="tabs__body">
+                                        <div class="profile-history__table">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <th>date</th>
+                                                        <th>type</th>
+                                                        <th>amount</th>
+                                                        <th>status</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>12 Jan 2025</td>
+                                                        <td>Balance top up</td>
+                                                        <td>+€15</td>
+                                                        <td><span class="status">Success</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>12 Jan 2025</td>
+                                                        <td>Balance top up</td>
+                                                        <td>+€15</td>
+                                                        <td><span class="status status_red">Declined</span></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

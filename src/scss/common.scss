@@ -3,20 +3,20 @@
 //========================================================================================================================================================
 
 .title {
-	font-family: var(--font-family);
-	font-weight: 700;
+	font-family: var(--heading-family);
+	font-weight: 400;
 	@include adaptiveValue("font-size", 22, 24);
 	line-height: 241%;
-	color: #2A2A2A;
+	color: #fff;
 	text-transform: uppercase;
 }
 
 .title-second {
-	font-family: var(--font-family);
-	font-weight: 700;
-	@include adaptiveValue("font-size", 22, 24);
-	line-height: 140%;
-	color: #2A2A2A;
+	font-family: var(--heading-family);
+	font-weight: 400;
+	@include adaptiveValue("font-size", 24, 24);
+	line-height: 125%;
+	color: #fff;
 	text-transform: uppercase;
 }
 
@@ -24,7 +24,7 @@
 	font-weight: 400;
 	font-size: toRem(16);
 	line-height: 175%;
-	color: #737373;
+	color: #fff;
 }
 
 //========================================================================================================================================================
@@ -56,14 +56,15 @@
 	justify-content: center;
 	align-items: center;
 
-	font-family: var(--font-family);
-	font-weight: 700;
-	font-size: toRem(12);
-	line-height: 200%;
-	color: #2a2a2a;
+	font-family: var(--button-family);
+	font-weight: 600;
+	font-size: toRem(20);
+	line-height: 180%;
+	text-transform: capitalize;
+	color: #fff;
 
-	background-color: #e9eae0;
-	border-radius: toRem(16);
+	background-color: rgba(255, 255, 255, 0.20);
+	border-radius: toRem(50);
 	padding: toRem(2) toRem(10);
 	min-height: toRem(29);
 

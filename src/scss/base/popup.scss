@@ -51,16 +51,17 @@ body::after {
 	visibility: hidden;
 	transform: scale(0);
 	transition: transform 0.3s ease 0s;
-	background-color: #f8f9ec;
+	background: rgba(2, 11, 43, 0.75);
+	box-shadow: 2px 6px 15px 0 rgba(0, 0, 0, 0.25);
 	width: 100%;
-	max-width: toRem(874);
-	border-radius: toRem(16);
+	max-width: toRem(794);
+	border-radius: toRem(30);
 
-	@include adaptiveValue("padding-block", 55, 40);
-	@include adaptiveValue("padding-inline", 53, 24, 0, $containerWidth, 991.98);
+	@include adaptiveValue("padding-block", 65, 40);
+	@include adaptiveValue("padding-inline", 50, 24, 0, $containerWidth, 991.98);
 
 	[class*="popup_quiz"] & {
-		min-height: toRem(538);
+		min-height: toRem(353);
 	}
 
 	.lock & {
@@ -119,13 +120,13 @@ body::after {
 	}
 
 	&__header {
-		max-width: toRem(608);
+		max-width: toRem(693);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
 		& > * {
-			@include adaptiveValue("margin-bottom", 40, 30);
+			@include adaptiveValue("margin-bottom", 35, 30);
 		}
 		& > :last-child {
 			margin-bottom: 0;
@@ -133,20 +134,21 @@ body::after {
 	}
 
 	&__title {
-		font-family: var(--font-family);
-		font-weight: 700;
-		font-size: toRem(32);
-		text-transform: capitalize;
+		font-family: var(--heading-family);
+		font-weight: 400;
+		font-size: toRem(50);
+		text-transform: uppercase;
 		text-align: center;
-		color: #2a2a2a;
+		color: #fff;
 		text-wrap: balance;
 	}
 
 	&__text {
-		max-width: toRem(526);
-		line-height: 138%;
+		max-width: toRem(693);
+		line-height: 150%;
+		font-size: toRem(14);
 		text-align: center;
-		color: #737373;
+		color: #fff;
 	}
 
 	&__buttons {
@@ -156,7 +158,7 @@ body::after {
 	}
 
 	&__button {
-		min-width: toRem(115);
+		min-width: toRem(200);
 	}
 
 	&__quiz-tags {
@@ -182,7 +184,7 @@ body::after {
 
 .quiz {
 	& > * {
-		@include adaptiveValue("margin-bottom", 80, 44);
+		@include adaptiveValue("margin-bottom", 55, 30);
 	}
 
 	&__header {
@@ -219,11 +221,11 @@ body::after {
 		display: none;
 		flex-direction: column;
 		align-items: center;
-		@include adaptiveValue("gap", 40, 24);
+		// @include adaptiveValue("gap", 40, 24);
 
-		&:not(:last-child) {
-			margin-bottom: toRem(20);
-		}
+		// &:not(:last-child) {
+		// 	margin-bottom: toRem(20);
+		// }
 
 		&._show {
 			display: flex;
@@ -235,31 +237,34 @@ body::after {
 	}
 
 	&__title {
-		font-family: var(--font-family);
-		font-weight: 700;
-		font-size: toRem(32);
-		text-transform: capitalize;
+		@include adaptiveValue("margin-bottom", 35, 30);
+		font-family: var(--heading-family);
+		font-weight: 400;
+		font-size: toRem(50);
+		text-transform: uppercase;
 		text-align: center;
-		color: #2a2a2a;
+		color: #fff;
 		text-wrap: balance;
 
-		max-width: toRem(425);
+		max-width: toRem(693);
 	}
 
 	&__text {
-		line-height: 138%;
+		@include adaptiveValue("margin-bottom", 55, 30);
+		font-size: toRem(14);
+		line-height: 150%;
 		text-align: center;
-		color: #737373;
-		max-width: toRem(338);
+		color: #fff;
+		max-width: toRem(693);
 	}
 
-	&__options {
-		margin-top: toRem(40);
+	// &__options {
+	// 	margin-top: toRem(40);
 
-		@media (min-width: toEm(600.98)) {
-			padding-inline: toRem(40);
-		}
-	}
+	// 	@media (min-width: toEm(600.98)) {
+	// 		padding-inline: toRem(40);
+	// 	}
+	// }
 
 	&__control {
 		@media (min-width: toEm(600.98)) {
@@ -331,11 +336,12 @@ body::after {
 
 	&__button {
 		pointer-events: all;
-		min-width: toRem(40);
-		height: toRem(40);
-		padding: toRem(4) toRem(8);
+		min-width: toRem(50);
+		height: toRem(50);
+		border: 1px solid #fff;
+		// padding: toRem(4) toRem(8);
 
-		background-color: #e9eae0;
+		background-color: transparent;
 		border-radius: toRem(20);
 		display: flex;
 		justify-content: center;
@@ -346,19 +352,24 @@ body::after {
 		font-weight: 700;
 		font-size: toRem(16);
 		line-height: 200%;
-		color: #2a2a2a;
+		transition:  all 0.2s ease;
+		color: #fff;
 
 		&::before {
 			order: 1;
 			font-size: toRem(24);
 			transition: transform 0.2s ease;
 		}
+
 		span {
 			display: none;
 		}
 
 		@media (any-hover: hover) {
 			&:hover {
+				background-color: #fff;
+				color: #161920;
+
 				&::before {
 					transform: scale(1.15);
 				}
